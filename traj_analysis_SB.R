@@ -2,7 +2,7 @@
 # Script desined to analyze tracks collected in ImageJ Manual tracking
 # plugin from CQ1 cytometer derived images, recorded during 4 h experiment
 # with Jurkat-HUVEC cells conditioned by co-cultivation and MbCD treatment.
-# Images were collected from MbCD treated and conrtol wells, to analyze the cells movement.
+# To analyze the cells movement, images were collected from 6-well plate during 3 hours.
 ##
 # If you use this script in your publications, please cite Bobkov D., Polyanskaya A., 
 # Musorina A., Lomert E., Shabelnikov S., Poljanskaya G. Replicative senescence in MSCWJ-1 
