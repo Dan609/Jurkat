@@ -4,4 +4,4 @@ The measurements were carried out in 2020 using the CQ1 confocal cytometer insta
 
 File traj_analysis_SB.R contains all scripts needed for tracks data collected in W1-W6 *.csv files where W number stands for number of well in 6-well cultivation plate.
 
-The alltracks.csv file contains the track analysis results as well as * .xlsx files.
+The alltracks.csv file contains the track analysis results as well as t.test* and wilcoxon.test* files.
