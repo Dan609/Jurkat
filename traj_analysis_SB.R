@@ -7,7 +7,7 @@
 # If you use this script in your publications, please cite Bobkov D., Polyanskaya A., 
 # Musorina A., Lomert E., Shabelnikov S., Poljanskaya G. Replicative senescence in MSCWJ-1 
 # human umbilical cord mesenchymal stem cells is marked by characteristic changes in motility, 
-# cytoskeletal organization, and RhoA localization. Molecular Biology Reports 47(5):3867-3883 (2020). 
+# cytoskeletal organization, and RhoA localization. Molecular Biology Reports. 2020. 47(5):3867-3883. 
 # doi: 10.1007/s11033-020-05476-6
 # This script based on trajr package
 # If you use trajr in your publications, please cite McLean DJ, Skowron Volponi MA. trajr:
