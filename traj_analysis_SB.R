@@ -4,7 +4,11 @@
 # with Jurcat-HUVEC cells conditioned by co-cultivation and MbCD treatment.
 # Images were collected from SPIONs and conrtol wells, to model the classical
 # replicative senescense effects.
-# If you use this script in your publications, please cite https://github.com/Dan609
+# If you use this script in your publications, please cite Bobkov D., Polyanskaya A., 
+# Musorina A., Lomert E., Shabelnikov S., Poljanskaya G. Replicative senescence in MSCWJ-1 
+# human umbilical cord mesenchymal stem cells is marked by characteristic changes in motility, 
+# cytoskeletal organization, and RhoA localization. Molecular Biology Reports 47(5):3867-3883 (2020). 
+# doi: 10.1007/s11033-020-05476-6
 # This script based on trajr package
 # If you use trajr in your publications, please cite McLean DJ, Skowron Volponi MA. trajr:
 # An R package for characterisation of animal trajectories. Ethology. 2018;12739.
@@ -927,34 +931,6 @@ chart.Correlation(data[,1:12], histogram=TRUE, pch=19)
 ggcorr(data, palette = "RdBu", label = TRUE)
 # dev.off()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 data$cells[data$probe == 8] <- 'HUVEC EC medium'
 
 data$cells[data$probe == 4] <- 'Huvec Jurkat medium'
@@ -966,10 +942,6 @@ data$cells[data$probe == 6] <- 'HUVEC MbCD'
 data$cells[data$probe == 3] <- 'Jurcat control'
 
 data$cells[data$probe == 7] <- 'Jurcat MbCD'
-
-
-
-
 
 # Set X - axis names
 CellSciGuylabs <- c("HUVEC\n(EC medium)", "HUVEC\n(Jurkat medium)", 
@@ -1058,14 +1030,6 @@ ggplot(data, aes(x = probe, y = mean_speed)) +
 
 
 
-
-
-
-
-
-
-
-
 kruskal.test(data$DC ~ data$cells)
 
 
@@ -1140,14 +1104,6 @@ ggplot(data, aes(x = probe, y = DC)) +
 
 
 
-
-
-
-
-
-
-
-
 kruskal.test(data$length ~ data$cells)
 
 
@@ -1219,18 +1175,6 @@ ggplot(data, aes(x = probe, y = length)) +
               xmax = c(5),
               annotation = "****",
               tip_length = 0.04)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1313,22 +1257,6 @@ ggplot(data, aes(x = probe, y = distance)) +
               tip_length = 0.04)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 kruskal.test(data$max_speed ~ data$cells)
 
 
@@ -1402,16 +1330,6 @@ ggplot(data, aes(x = probe, y = max_speed)) +
 
 
 
-
-
-
-
-
-
-
-
-
-  
   
 compare_means(sinuosity ~ probe,  data = data, method = "t.test")
 
@@ -1466,8 +1384,6 @@ ggplot(all.h, aes(x = probe, y = sinuosity)) +
               annotation = "ns",
               tip_length = 0.04)
 
-  
-  
   
   
   
@@ -1610,23 +1526,6 @@ ggplot(all.h, aes(x = probe, y = DC)) +
               tip_length = 0.04) 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #install.packages('agricolae')
 Median.test(data$mean_speed, # ????????? ???????? ???????????
             data$probe,
@@ -1734,19 +1633,11 @@ plotmeans(straight ~ probe, data = data, frame = FALSE,
 #################################################
 # Mean and sd --------------------------
 
-
-
-
-
-
-
 mean(data[data$probe=='3',]$mean_speed)
 sd(data[data$probe=='3',]$mean_speed)
 
 mean(data[data$probe=='7',]$mean_speed)
 sd(data[data$probe=='7',]$mean_speed)
-
-
 
 mean(data[data$probe=='3',]$max_speed)
 sd(data[data$probe=='3',]$max_speed)
@@ -1756,21 +1647,12 @@ mean(data[data$probe=='7',]$max_speed)
 sd(data[data$probe=='7',]$max_speed)
 
 
-
-
-
-
-
 mean(data[data$probe=='3',]$distance)
 sd(data[data$probe=='3',]$distance)
 
 
 mean(data[data$probe=='7',]$distance)
 sd(data[data$probe=='7',]$distance)
-
-
-
-
 
 
 mean(data[data$probe=='3',]$length)
@@ -1790,9 +1672,6 @@ sd(data[data$probe=='3',]$DC)
 mean(data[data$probe=='7',]$DC)
 sd(data[data$probe=='7',]$DC)
 
-
-
-
 #
 mean(data[data$probe=='3',]$emax)
 sd(data[data$probe=='3',]$emax)
@@ -1802,19 +1681,10 @@ sd(data[data$probe=='7',]$emax)
 
 
 
-
-
-
-
-
-
-
-
 #  -----------
 # compare means
 compare_means(mean_speed ~ probe,  data = data, method = "t.test")
 compare_means(straight ~ probe,  data = data, method = "t.test")
-
 
 
 compare_means(mean_speed ~ probe,  data = data, method = "anova")
@@ -1843,8 +1713,6 @@ geom_signif(y_position = c(170),
             xmax = c(2),
             annotation = "p = 0.036",
             tip_length = 0.04)
-
-
 
 
 qplot(probe, mean_speed, data = data,
@@ -2325,8 +2193,6 @@ stat_summary(fun.y = mean, geom = "point",
   
   labs(y = 'Micrometers per hour',
        x = "FetMSC 24h motility")
-
-
 
 
 
