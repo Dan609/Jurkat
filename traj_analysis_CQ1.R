@@ -2,9 +2,10 @@
 # Script desined to analyze tracks collected in ImageJ Manual tracking
 # plugin from CQ1 cytometer derived images, recorded during 4 h experiment
 # with Jurcat-HUVEC cells conditioned by co-cultivation and MbCD treatment.
-# Images were collected from SPIONs and conrtol wells, to model the classical
-# replicative senescense effects.
-# If you use this script in your publications, please cite https://github.com/Dan609
+# If you use this script in your publications, please cite 
+# Bobkov et al., Replicative senescence in MSCWJ-1 human umbilical cord mesenchymal 
+# stem cells is marked by characteristic changes in motility, cytoskeletal organization, 
+# and RhoA localization, Mol. Biol. Rep. 47 (2020) 3867-3883. https://doi.org/10.1007/s11033-020-05476-6
 # This script based on trajr package
 # If you use trajr in your publications, please cite McLean DJ, Skowron Volponi MA. trajr:
 # An R package for characterisation of animal trajectories. Ethology. 2018;12739.
@@ -93,15 +94,15 @@ alltracks <- setNames(data.frame(matrix(ncol = 15, nrow = 0)),
                          "SDDC",
                          "mean_angle",
                          "probe"))
-#tracks_W1J <- alltracks
+tracks_W1J <- alltracks
 tracks_W2H <- alltracks
-tracks_W2J <- alltracks
-tracks_W3H <- alltracks
-#tracks_W4J <- alltracks
+tracks_W2J <- alltracks # W1-W6 is 6-well plate well number
+tracks_W3H <- alltracks # J - Jurkat
+tracks_W4J <- alltracks # H - HUVEC
 tracks_W5H <- alltracks
 tracks_W5J <- alltracks
 tracks_W6H <- alltracks
-# tracks <- alltracks #?
+
 # Remove outliers function------
 ###
 remove_outliers <- function(x, na.rm = TRUE, ...) {
@@ -113,13 +114,10 @@ remove_outliers <- function(x, na.rm = TRUE, ...) {
   y
 }
 
-#data$mean_speed <- remove_outliers(data$mean_speed)
 #################################################
 ##### Trajectory Analisys Functions #############
 #################################################
 # Load Track analysis functions
-
-
 
 traj_analysis_W2H <- function(input) {
   
